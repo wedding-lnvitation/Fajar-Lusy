@@ -11,7 +11,6 @@
     <meta property="og:url" content="https://wedding-lnvitation.github.io/Fajar-Lusy/">
     <meta property="og:type" content="website">
     <title>Undangan Pernikahan Fajar & Lusy</title> 
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,12 +22,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'gray-soft': '#f9fafb',   // Abu-abu sangat terang (Hampir putih)
-                        'gray-light': '#f3f4f6',  // Abu-abu terang
-                        'gray-medium': '#e5e7eb', // Abu-abu sedang untuk border/aksen
-                        'gray-accent': '#9ca3af', // Abu-abu gelap untuk ikon/aksen
-                        'gray-text': '#4b5563',   // Abu-abu gelap untuk teks sekunder
-                        'gray-dark': '#1f2937',   // Abu-abu sangat gelap untuk teks utama
+                        // Palet Platinum/Silver/Monkey Grey
+                        'silver-light': '#e5e7eb', // Platinum muda
+                        'silver-base': '#d1d5db',  // Silver / Light Gray
+                        'silver-dark': '#9ca3af',  // Monkey grey terang
+                        'charcoal': '#374151',     // Teks utama (abu gelap)
+                        'gray-muted': '#6b7280',   // Teks sekunder
                     },
                     fontFamily: {
                         'serif': ['"Cormorant Garamond"', 'serif'],
@@ -43,20 +42,20 @@
     <style>
         html { 
             scroll-behavior: smooth; 
-            background-color: #f3f4f6;
+            background-color: #d1d5db; /* Warna dasar silver */
         }
         
         body {
-            /* Gradasi cerah dari soft abu ke abu terang */
-            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 40%, #f3f4f6 75%, #e5e7eb 100%);
+            /* Gradasi elegan bernuansa Platinum, Silver, dan Monkey Grey */
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 40%, #d1d5db 75%, #9ca3af 100%);
             background-attachment: fixed;
-            color: #1f2937; /* Teks default gelap */
+            color: #374151; /* Teks Charcoal */
             overflow-x: hidden;
         }
 
         .bg-pattern {
-            /* Pola titik abu-abu transparan */
-            background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px); 
+            /* Pola titik halus untuk tekstur */
+            background-image: radial-gradient(rgba(55, 65, 81, 0.04) 1px, transparent 1px); 
             background-size: 25px 25px;
         }
 
@@ -81,13 +80,13 @@
         .delay-400 { transition-delay: 400ms; }
         .delay-500 { transition-delay: 500ms; }
 
-        /* Hiasan Bunga (Disesuaikan untuk mode terang) */
         .floral-3d {
             position: absolute;
             width: 250px;
-            filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1));
-            mix-blend-mode: multiply; /* Agar menyatu natural dengan bg terang */
-            opacity: 0.5;
+            /* Bayangan disesuaikan untuk latar silver agar tidak terlalu gelap */
+            filter: drop-shadow(0px 15px 20px rgba(55, 65, 81, 0.15)) drop-shadow(0px 5px 5px rgba(55, 65, 81, 0.1));
+            mix-blend-mode: multiply; /* Cocok untuk latar terang/medium */
+            opacity: 0.6;
             pointer-events: none;
             z-index: 5;
         }
@@ -101,37 +100,37 @@
             to { transform: scale(1.1); }
         }
 
-        /* Efek Kaca (Glassmorphism Terang) */
+        /* Glassmorphism disesuaikan untuk kesan mewah di atas silver */
         .glass-card {
-            background: rgba(255, 255, 255, 0.6); 
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.45); /* Putih translusen sedikit lebih pekat */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7); /* Border putih cerah untuk highlight */
+            box-shadow: 0 20px 40px rgba(55, 65, 81, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5); /* Shadow elegan */
         }
 
         .photo-frame {
             border-radius: 200px 200px 20px 20px;
             overflow: hidden;
-            border: 5px solid rgba(255, 255, 255, 0.8); 
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+            border: 4px solid rgba(255, 255, 255, 0.85); 
+            box-shadow: 0 25px 35px rgba(55, 65, 81, 0.12);
         }
 
-        /* Scrollbar Terang */
+        /* Scrollbar menyatu dengan tema */
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.02); border-radius: 10px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #6b7280; }
 
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Autofill Form Terang */
+        /* Autofill Form untuk tema terang/medium */
         input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.9) inset !important;
-            -webkit-text-fill-color: #1f2937 !important;
+            -webkit-box-shadow: 0 0 0px 1000px rgba(243, 244, 246, 0.9) inset !important;
+            -webkit-text-fill-color: #374151 !important;
         }
     </style>
 </head>
@@ -140,37 +139,38 @@
     <audio id="bgMusic" loop src="https://birthdaysx.github.io/Musik/for-the-rest.mp3"></audio>
 
     <header id="home" class="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden"> 
-        <div class="absolute inset-0 z-0 bg-gray-100">
+        <div class="absolute inset-0 z-0 bg-silver-base">
             <img src="https://birthdaysx.github.io/Foto6/download (15).jpeg"   
                  alt="Background Cover" 
                  class="w-full h-full object-cover hero-zoom opacity-50"> 
-            <!-- Overlay gradasi putih ke soft abu -->
-            <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-gray-100/60 to-gray-200/90 z-10"></div> 
+            <!-- Overlay gradasi silver -->
+            <div class="absolute inset-0 bg-gradient-to-b from-silver-light/70 via-silver-base/50 to-silver-dark/80 z-10"></div> 
         </div>
 
         <div class="relative z-20 text-center px-4 max-w-2xl mx-auto flex flex-col items-center gap-4">
-            <p class="font-serif italic text-xl md:text-2xl text-gray-text tracking-widest drop-shadow-sm reveal-up delay-100">The Wedding Of</p>
+            <p class="font-serif italic text-xl md:text-2xl text-charcoal tracking-widest drop-shadow-sm reveal-up delay-100">The Wedding Of</p>
             
-            <h1 class="font-cursive text-6xl md:text-8xl text-gray-dark my-1 drop-shadow-sm reveal-up delay-200">
+            <!-- Nama mempelai dibuat Charcoal gelap agar elegan dan terbaca jelas di atas silver -->
+            <h1 class="font-cursive text-6xl md:text-8xl text-charcoal my-1 drop-shadow-sm reveal-up delay-200">
                 Fajar & Lusy
             </h1>
             
-            <div class="h-px w-32 bg-gray-accent mx-auto my-2 opacity-50 reveal-up delay-300"></div>
+            <div class="h-px w-32 bg-charcoal mx-auto my-2 opacity-40 reveal-up delay-300"></div>
             
-            <p class="font-serif text-lg md:text-xl text-gray-text uppercase tracking-widest font-semibold reveal-up delay-300">
+            <p class="font-serif text-lg md:text-xl text-charcoal uppercase tracking-widest font-semibold reveal-up delay-300">
                 18 September 2026
             </p>
 
             <div class="mt-4 p-4 rounded-2xl glass-card max-w-sm w-full relative overflow-hidden reveal-up delay-400">
-                <div class="absolute top-0 right-0 w-16 h-16 bg-gray-400 opacity-10 rounded-bl-full"></div>
-                <p class="text-xs uppercase tracking-wider text-gray-500 font-medium relative z-10">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="guestNameDisplay" class="font-serif text-2xl font-bold text-gray-dark capitalize mt-1 relative z-10">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-white opacity-40 rounded-bl-full"></div>
+                <p class="text-xs uppercase tracking-wider text-gray-muted font-medium relative z-10">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h3 id="guestNameDisplay" class="font-serif text-2xl font-bold text-charcoal capitalize mt-1 relative z-10">
                     Tamu Undangan
                 </h3>
             </div>
 
-            <!-- Tombol diganti menjadi abu gelap agar kontras -->
-            <a href="#invitation" id="openInvitationBtn" class="mt-4 px-8 py-3 rounded-full bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white font-sans text-sm tracking-wider transition shadow-xl flex items-center gap-2 cursor-pointer z-30 transform hover:scale-105 active:scale-95 duration-200 reveal-up delay-500">
+            <!-- Tombol disesuaikan: Latar putih/silver terang dengan teks Charcoal -->
+            <a href="#invitation" id="openInvitationBtn" class="mt-4 px-8 py-3 rounded-full bg-white/80 hover:bg-white border border-silver-base text-charcoal font-sans text-sm tracking-wider font-bold transition shadow-[0_10px_20px_rgba(55,65,81,0.1)] flex items-center gap-2 cursor-pointer z-30 transform hover:scale-105 active:scale-95 duration-200 backdrop-blur-md reveal-up delay-500">
                 <i class="fas fa-envelope-open-text"></i> Buka Undangan
             </a>
         </div>
@@ -180,20 +180,20 @@
         <img src="https://birthdaysx.github.io/Foto6/bungaa1.png" alt="Floral Decoration" class="floral-3d top-[-30px] left-[-50px] transform -rotate-45 md:w-[350px]">
 
         <div class="max-w-4xl mx-auto relative z-10">
-            <i class="fas fa-leaf text-gray-accent text-3xl mb-6 drop-shadow-sm reveal-up delay-100"></i>
-            <h2 class="font-serif text-3xl md:text-4xl text-gray-dark mb-8 reveal-up delay-100">Bismillahirahmanirrahim</h2>
-            <p class="font-sans text-sm md:text-base leading-relaxed text-gray-text mb-6 font-medium reveal-up delay-200">
+            <i class="fas fa-leaf text-silver-dark text-3xl mb-6 reveal-up delay-100"></i>
+            <h2 class="font-serif text-3xl md:text-4xl text-charcoal mb-8 reveal-up delay-100">Bismillahirahmanirrahim</h2>
+            <p class="font-sans text-sm md:text-base leading-relaxed text-gray-muted mb-6 font-medium reveal-up delay-200">
                 Assalamu'alaikum Warahmatullahi Wabarakatuh.
             </p>
-            <p class="font-sans text-sm md:text-base leading-relaxed text-gray-600 mb-8 italic max-w-2xl mx-auto reveal-up delay-300">
+            <p class="font-sans text-sm md:text-base leading-relaxed text-charcoal mb-8 italic max-w-2xl mx-auto reveal-up delay-300">
                 "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang..."
             </p>
-            <p class="font-serif font-semibold text-gray-text mb-12 text-lg reveal-up delay-400">(QS. Ar-Rum: 21)</p>
+            <p class="font-serif font-semibold text-gray-muted mb-12 text-lg reveal-up delay-400">(QS. Ar-Rum: 21)</p>
             
-            <div class="relative w-full max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-white h-[400px] md:h-[500px] reveal-zoom delay-200">
+            <div class="relative w-full max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-[0_25px_50px_rgba(55,65,81,0.15)] border-2 border-white/60 h-[400px] md:h-[500px] reveal-zoom delay-200">
                 <img src="https://birthdaysx.github.io/Foto6/prewed1.jpeg" alt="Prewedding Fajar & Lusy" class="w-full h-full object-cover opacity-95 hover:scale-105 transition duration-700">
-                <!-- Overlay terang -->
-                <div class="absolute inset-0 bg-gradient-to-t from-white/80 via-white/10 to-transparent"></div>
+                <!-- Overlay terang untuk efek platinum -->
+                <div class="absolute inset-0 bg-gradient-to-t from-silver-light/80 via-white/10 to-transparent"></div>
             </div>
         </div>
     </section>
@@ -201,38 +201,39 @@
     <section class="py-24 px-4 relative overflow-hidden" id="couple">
         <img src="https://birthdaysx.github.io/Foto6/bungaa2.png" alt="Floral Decoration" class="floral-3d bottom-[-50px] right-[-50px] transform rotate-[135deg] md:w-[350px]">
 
-        <!-- Highlight cahaya lembut -->
-        <div class="absolute top-0 left-0 w-40 h-40 opacity-50 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white blur-3xl pointer-events-none"></div>
+        <!-- Highlight cahaya lembut (putih) di belakang kartu -->
+        <div class="absolute top-0 left-0 w-64 h-64 opacity-40 transform -translate-x-1/3 -translate-y-1/3 rounded-full bg-white blur-3xl pointer-events-none"></div>
 
         <div class="max-w-5xl mx-auto relative z-10 glass-card rounded-3xl p-8 md:p-12 reveal-up">
             <div class="text-center mb-16">
-                <h2 class="font-cursive text-5xl md:text-6xl text-gray-dark mb-2 reveal-up delay-100">Mempelai</h2>
-                <div class="h-px w-24 bg-gray-accent mx-auto opacity-60 reveal-up delay-200"></div>
-                <p class="mt-4 text-sm text-gray-text font-sans font-medium reveal-up delay-300">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
+                <h2 class="font-cursive text-5xl md:text-6xl text-charcoal mb-2 reveal-up delay-100">Mempelai</h2>
+                <div class="h-px w-24 bg-silver-dark mx-auto opacity-50 reveal-up delay-200"></div>
+                <p class="mt-4 text-sm text-gray-muted font-sans font-medium reveal-up delay-300">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
             </div>
 
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-12">
                 
                 <div class="flex flex-col items-center md:items-end text-center md:text-right flex-1 order-2 md:order-1 reveal-left delay-200">
-                    <h3 class="font-serif text-3xl lg:text-4xl font-semibold text-gray-dark mb-2">Fajar</h3>
-                    <p class="font-sans text-sm text-gray-text mb-4 max-w-xs font-medium">Putra dari<br>Bapak Nama Bapak & Ibu Nama Ibu</p>
-                    <a href="#" class="text-gray-text hover:text-gray-dark transition flex items-center gap-2 font-medium bg-white/50 px-4 py-2 rounded-full border border-gray-200 shadow-sm"><i class="fab fa-instagram text-xl"></i> @fajar_ig</a>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-semibold text-charcoal mb-2">Fajar</h3>
+                    <p class="font-sans text-sm text-gray-muted mb-4 max-w-xs font-medium">Putra dari<br>Bapak Nama Bapak & Ibu Nama Ibu</p>
+                    <a href="#" class="text-gray-muted hover:text-charcoal transition flex items-center gap-2 font-medium bg-white/60 px-5 py-2 rounded-full border border-silver-base shadow-sm"><i class="fab fa-instagram text-xl"></i> @fajar_ig</a>
                 </div>
 
                 <div class="order-1 md:order-2 flex-shrink-0 z-10 mx-4 relative reveal-zoom delay-100">
-                    <div class="photo-frame w-64 h-80 md:w-80 md:h-[400px] p-2 bg-white/60 relative">
-                        <i class="fas fa-leaf absolute top-4 left-6 text-xl text-gray-accent/60 transform -rotate-45 z-10"></i>
+                    <!-- Frame foto platinum -->
+                    <div class="photo-frame w-64 h-80 md:w-80 md:h-[400px] p-2 bg-white/70 backdrop-blur-md relative">
+                        <i class="fas fa-leaf absolute top-4 left-6 text-xl text-silver-dark/60 transform -rotate-45 z-10"></i>
                         <img src="https://birthdaysx.github.io/Foto6/prewed2.jpeg" alt="Fajar & Lusy" class="w-full h-full object-cover rounded-[190px_190px_12px_12px] opacity-95 relative z-0">
                     </div>
-                    <div class="font-cursive text-4xl text-gray-dark text-center mt-[-30px] relative z-20 shadow-lg bg-white w-16 h-16 mx-auto rounded-full flex items-center justify-center border border-gray-100">
+                    <div class="font-cursive text-4xl text-charcoal text-center mt-[-30px] relative z-20 shadow-lg bg-white/90 backdrop-blur-md w-16 h-16 mx-auto rounded-full flex items-center justify-center border border-silver-base">
                         &
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start text-center md:text-left flex-1 order-3 reveal-right delay-200">
-                    <h3 class="font-serif text-3xl lg:text-4xl font-semibold text-gray-dark mb-2">Lusy</h3>
-                    <p class="font-sans text-sm text-gray-text mb-4 max-w-xs font-medium">Putri dari<br>Bapak Nama Bapak & Ibu Nama Ibu</p>
-                    <a href="#" class="text-gray-text hover:text-gray-dark transition flex items-center gap-2 font-medium bg-white/50 px-4 py-2 rounded-full border border-gray-200 shadow-sm"><i class="fab fa-instagram text-xl"></i> @lusy_ig</a>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-semibold text-charcoal mb-2">Lusy</h3>
+                    <p class="font-sans text-sm text-gray-muted mb-4 max-w-xs font-medium">Putri dari<br>Bapak Nama Bapak & Ibu Nama Ibu</p>
+                    <a href="#" class="text-gray-muted hover:text-charcoal transition flex items-center gap-2 font-medium bg-white/60 px-5 py-2 rounded-full border border-silver-base shadow-sm"><i class="fab fa-instagram text-xl"></i> @lusy_ig</a>
                 </div>
 
             </div>
@@ -240,45 +241,46 @@
     </section>
 
     <section class="py-12 px-4 relative">
-        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 text-center shadow-xl relative overflow-hidden reveal-up">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gray-200 opacity-[0.3] rounded-bl-full pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 text-center shadow-lg relative overflow-hidden reveal-up">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-40 rounded-bl-full pointer-events-none blur-lg"></div>
             
-            <img src="https://birthdaysx.github.io/Foto6/download (18).png" alt="Center Floral" class="w-[150px] mx-auto -mt-2 mb-2 mix-blend-multiply opacity-40 reveal-zoom delay-100 relative z-10"> 
+            <img src="https://birthdaysx.github.io/Foto6/download (18).png" alt="Center Floral" class="w-[150px] mx-auto -mt-2 mb-2 mix-blend-multiply opacity-50 reveal-zoom delay-100 relative z-10"> 
 
-            <h3 class="font-serif text-2xl md:text-3xl text-gray-dark font-semibold mb-2 reveal-up delay-200">Menghitung Hari</h3>
-            <p class="text-xs md:text-sm text-gray-text mb-6 font-medium reveal-up delay-300">Menuju hari bahagia Fajar & Lusy</p> 
+            <h3 class="font-serif text-2xl md:text-3xl text-charcoal font-semibold mb-2 reveal-up delay-200">Menghitung Hari</h3>
+            <p class="text-xs md:text-sm text-gray-muted mb-6 font-medium reveal-up delay-300">Menuju hari bahagia Fajar & Lusy</p> 
             
             <div class="grid grid-cols-4 gap-3 md:gap-6 max-w-2xl mx-auto relative z-10">
-                <div class="bg-white/70 p-3 md:p-4 rounded-2xl shadow-sm border border-white reveal-up delay-100">
-                    <span id="cdDays" class="block font-serif text-3xl md:text-5xl font-bold text-gray-800">0</span>
-                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-500 tracking-wider mt-1 block">Hari</span>
+                <div class="bg-white/60 p-3 md:p-4 rounded-2xl shadow-[inset_0_2px_10px_rgba(255,255,255,1),_0_5px_15px_rgba(55,65,81,0.05)] border border-white/80 backdrop-blur-sm reveal-up delay-100">
+                    <span id="cdDays" class="block font-serif text-3xl md:text-5xl font-bold text-charcoal">0</span>
+                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-muted tracking-wider mt-1 block">Hari</span>
                 </div>
-                <div class="bg-white/70 p-3 md:p-4 rounded-2xl shadow-sm border border-white reveal-up delay-200">
-                    <span id="cdHours" class="block font-serif text-3xl md:text-5xl font-bold text-gray-800">0</span>
-                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-500 tracking-wider mt-1 block">Jam</span>
+                <div class="bg-white/60 p-3 md:p-4 rounded-2xl shadow-[inset_0_2px_10px_rgba(255,255,255,1),_0_5px_15px_rgba(55,65,81,0.05)] border border-white/80 backdrop-blur-sm reveal-up delay-200">
+                    <span id="cdHours" class="block font-serif text-3xl md:text-5xl font-bold text-charcoal">0</span>
+                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-muted tracking-wider mt-1 block">Jam</span>
                 </div>
-                <div class="bg-white/70 p-3 md:p-4 rounded-2xl shadow-sm border border-white reveal-up delay-300">
-                    <span id="cdMinutes" class="block font-serif text-3xl md:text-5xl font-bold text-gray-800">0</span>
-                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-500 tracking-wider mt-1 block">Menit</span>
+                <div class="bg-white/60 p-3 md:p-4 rounded-2xl shadow-[inset_0_2px_10px_rgba(255,255,255,1),_0_5px_15px_rgba(55,65,81,0.05)] border border-white/80 backdrop-blur-sm reveal-up delay-300">
+                    <span id="cdMinutes" class="block font-serif text-3xl md:text-5xl font-bold text-charcoal">0</span>
+                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-muted tracking-wider mt-1 block">Menit</span>
                 </div>
-                <div class="bg-white/70 p-3 md:p-4 rounded-2xl shadow-sm border border-white reveal-up delay-400">
-                    <span id="cdSeconds" class="block font-serif text-3xl md:text-5xl font-bold text-gray-800">0</span>
-                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-500 tracking-wider mt-1 block">Detik</span>
+                <div class="bg-white/60 p-3 md:p-4 rounded-2xl shadow-[inset_0_2px_10px_rgba(255,255,255,1),_0_5px_15px_rgba(55,65,81,0.05)] border border-white/80 backdrop-blur-sm reveal-up delay-400">
+                    <span id="cdSeconds" class="block font-serif text-3xl md:text-5xl font-bold text-charcoal">0</span>
+                    <span class="text-[10px] md:text-xs uppercase font-semibold text-gray-muted tracking-wider mt-1 block">Detik</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-16 px-4 relative flex justify-center">
-        <div class="max-w-6xl w-full mx-auto rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative h-[50vh] md:h-[60vh] border border-white reveal-zoom">
+        <!-- Kotak quote silver bernuansa mewah -->
+        <div class="max-w-6xl w-full mx-auto rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(55,65,81,0.15)] relative h-[50vh] md:h-[60vh] border border-white/50 reveal-zoom">
             <img src="https://birthdaysx.github.io/Foto6/prewed3.jpeg" class="w-full h-full object-cover opacity-90" alt="Prewedding">
-            <!-- Overlay terang untuk quote -->
-            <div class="absolute inset-0 bg-white/70 flex flex-col items-center justify-center p-8 text-center backdrop-blur-sm">
-                <i class="fas fa-quote-left text-3xl text-gray-400 mb-4 reveal-up delay-100"></i>
-                <p class="font-serif text-2xl md:text-4xl text-gray-dark italic drop-shadow-sm max-w-3xl leading-relaxed reveal-up delay-200">
+            <!-- Overlay platinum translusen -->
+            <div class="absolute inset-0 bg-silver-light/70 flex flex-col items-center justify-center p-8 text-center backdrop-blur-[3px]">
+                <i class="fas fa-quote-left text-3xl text-silver-dark mb-4 drop-shadow-sm reveal-up delay-100"></i>
+                <p class="font-serif text-2xl md:text-4xl text-charcoal italic drop-shadow-sm max-w-3xl leading-relaxed reveal-up delay-200">
                     "Cinta tidak berupa tatapan satu sama lain, tetapi memandang ke luar bersama ke arah yang sama."
                 </p>
-                <p class="font-sans text-gray-600 mt-6 tracking-widest uppercase text-sm font-semibold opacity-90 reveal-up delay-300">
+                <p class="font-sans text-gray-muted mt-6 tracking-widest uppercase text-sm font-semibold opacity-90 reveal-up delay-300">
                     - Antoine de Saint-Exupéry - 
                 </p>
             </div>  
@@ -290,50 +292,50 @@
 
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <div class="mb-16">
-                <h2 class="font-cursive text-5xl md:text-6xl text-gray-dark mb-2 reveal-up delay-100">Jadwal Acara</h2>
-                <div class="h-px w-24 bg-gray-accent mx-auto opacity-60 reveal-up delay-200"></div>
+                <h2 class="font-cursive text-5xl md:text-6xl text-charcoal mb-2 reveal-up delay-100">Jadwal Acara</h2>
+                <div class="h-px w-24 bg-silver-dark mx-auto opacity-50 reveal-up delay-200"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                 
-                <div class="glass-card rounded-3xl p-8 md:p-10 text-center relative overflow-hidden hover:-translate-y-2 transition duration-300 reveal-up delay-200">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gray-200 opacity-20 rounded-bl-[100px] pointer-events-none"></div>
-                    <i class="fas fa-ring text-4xl text-gray-accent mb-6 drop-shadow-sm"></i>
-                    <h3 class="font-serif text-3xl text-gray-dark font-bold mb-4">Akad Nikah</h3>
+                <div class="glass-card rounded-3xl p-8 md:p-10 text-center relative overflow-hidden hover:-translate-y-2 transition duration-300 reveal-up delay-200 border-t-4 border-t-white/80">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-[100px] pointer-events-none blur-md"></div>
+                    <i class="fas fa-ring text-4xl text-silver-dark mb-6"></i>
+                    <h3 class="font-serif text-3xl text-charcoal font-bold mb-4">Akad Nikah</h3>
                     
-                    <div class="bg-white/70 rounded-2xl p-5 mb-6 shadow-sm border border-gray-100">
-                        <p class="font-bold text-gray-500 text-lg">Jumat</p>
-                        <p class="font-serif text-4xl text-gray-800 my-2 font-bold drop-shadow-sm">18</p>
-                        <p class="font-bold text-gray-500 text-lg">September 2026</p>
+                    <div class="bg-white/70 rounded-2xl p-5 mb-6 shadow-sm border border-white/90">
+                        <p class="font-bold text-gray-muted text-lg">Jumat</p>
+                        <p class="font-serif text-4xl text-charcoal my-2 font-bold drop-shadow-sm">18</p>
+                        <p class="font-bold text-gray-muted text-lg">September 2026</p>
                     </div>
                     
-                    <p class="font-sans text-gray-text font-medium mb-2"><i class="far fa-clock mr-2 text-gray-400"></i>08:00 WIB - Selesai</p>
+                    <p class="font-sans text-gray-muted font-medium mb-2"><i class="far fa-clock mr-2 text-silver-dark"></i>08:00 WIB - Selesai</p>
                     <div class="mt-6">
-                        <p class="font-bold text-gray-800 mb-1">Masjid Raya (Contoh)</p>
-                        <p class="text-sm text-gray-500">Jl. Contoh Nama Jalan No. 123, Kota, Provinsi</p>
+                        <p class="font-bold text-charcoal mb-1">Masjid Raya (Contoh)</p>
+                        <p class="text-sm text-gray-muted">Jl. Contoh Nama Jalan No. 123, Kota, Provinsi</p>
                     </div>
-                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 px-6 py-2.5 border border-gray-300 text-gray-700 rounded-full text-sm font-semibold hover:bg-gray-800 hover:text-white transition duration-300 bg-white shadow-sm">
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 px-6 py-2.5 bg-white border border-silver-base text-charcoal rounded-full text-sm font-semibold hover:bg-gray-50 transition duration-300 shadow-md">
                         <i class="fas fa-map-marker-alt mr-2"></i>Lihat Lokasi
                     </a>
                 </div>
 
-                <div class="glass-card rounded-3xl p-8 md:p-10 text-center relative overflow-hidden hover:-translate-y-2 transition duration-300 reveal-up delay-400">
-                    <div class="absolute top-0 left-0 w-32 h-32 bg-gray-200 opacity-20 rounded-br-[100px] pointer-events-none"></div>
-                    <i class="fas fa-glass-cheers text-4xl text-gray-accent mb-6 drop-shadow-sm"></i>
-                    <h3 class="font-serif text-3xl text-gray-dark font-bold mb-4">Resepsi</h3>
+                <div class="glass-card rounded-3xl p-8 md:p-10 text-center relative overflow-hidden hover:-translate-y-2 transition duration-300 reveal-up delay-400 border-t-4 border-t-white/80">
+                    <div class="absolute top-0 left-0 w-32 h-32 bg-white/40 rounded-br-[100px] pointer-events-none blur-md"></div>
+                    <i class="fas fa-glass-cheers text-4xl text-silver-dark mb-6"></i>
+                    <h3 class="font-serif text-3xl text-charcoal font-bold mb-4">Resepsi</h3>
                     
-                    <div class="bg-white/70 rounded-2xl p-5 mb-6 shadow-sm border border-gray-100">
-                        <p class="font-bold text-gray-500 text-lg">Jumat</p>
-                        <p class="font-serif text-4xl text-gray-800 my-2 font-bold drop-shadow-sm">18</p>
-                        <p class="font-bold text-gray-500 text-lg">September 2026</p>
+                    <div class="bg-white/70 rounded-2xl p-5 mb-6 shadow-sm border border-white/90">
+                        <p class="font-bold text-gray-muted text-lg">Jumat</p>
+                        <p class="font-serif text-4xl text-charcoal my-2 font-bold drop-shadow-sm">18</p>
+                        <p class="font-bold text-gray-muted text-lg">September 2026</p>
                     </div>
                     
-                    <p class="font-sans text-gray-text font-medium mb-2"><i class="far fa-clock mr-2 text-gray-400"></i>11:00 WIB - 14:00 WIB</p>
+                    <p class="font-sans text-gray-muted font-medium mb-2"><i class="far fa-clock mr-2 text-silver-dark"></i>11:00 WIB - 14:00 WIB</p>
                     <div class="mt-6">
-                        <p class="font-bold text-gray-800 mb-1">Gedung Pertemuan (Contoh)</p>
-                        <p class="text-sm text-gray-500">Jl. Contoh Nama Jalan No. 123, Kota, Provinsi</p>
+                        <p class="font-bold text-charcoal mb-1">Gedung Pertemuan (Contoh)</p>
+                        <p class="text-sm text-gray-muted">Jl. Contoh Nama Jalan No. 123, Kota, Provinsi</p>
                     </div>
-                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 px-6 py-2.5 bg-gray-800 text-white rounded-full text-sm font-semibold shadow-md hover:bg-gray-700 transition duration-300">
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 px-6 py-2.5 bg-charcoal text-white border border-transparent rounded-full text-sm font-semibold shadow-md hover:bg-gray-800 transition duration-300">
                         <i class="fas fa-map-marker-alt mr-2"></i>Lihat Lokasi
                     </a>
                 </div>
@@ -345,35 +347,35 @@
     <section class="py-20 px-4 relative" id="gift">
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <div class="mb-12">
-                <i class="fas fa-gift text-gray-accent text-4xl mb-4 reveal-up delay-100"></i>
-                <h2 class="font-cursive text-5xl md:text-6xl text-gray-dark mb-2 reveal-up delay-200">Wedding Gift</h2>
-                <div class="h-px w-24 bg-gray-accent mx-auto mb-4 opacity-60 reveal-up delay-300"></div>
-                <p class="text-sm text-gray-text max-w-lg mx-auto font-medium reveal-up delay-400">
+                <i class="fas fa-gift text-silver-dark text-4xl mb-4 reveal-up delay-100"></i>
+                <h2 class="font-cursive text-5xl md:text-6xl text-charcoal mb-2 reveal-up delay-200">Wedding Gift</h2>
+                <div class="h-px w-24 bg-silver-dark mx-auto mb-4 opacity-50 reveal-up delay-300"></div>
+                <p class="text-sm text-gray-muted max-w-lg mx-auto font-medium reveal-up delay-400">
                     Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi hadiah melalui rekening berikut:
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                 <div class="glass-card p-8 rounded-3xl text-center relative overflow-hidden reveal-up delay-200">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-5 text-gray-700 font-bold border border-gray-200 shadow-sm">
-                        <i class="fas fa-university text-2xl text-gray-500"></i>
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-5 text-charcoal font-bold border-2 border-silver-base shadow-sm">
+                        <i class="fas fa-university text-2xl text-silver-dark"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Bank BCA</h3>
-                    <p class="font-mono text-2xl font-bold text-gray-700 my-2 tracking-wider drop-shadow-sm" id="accBca">1234 5678 90</p>
-                    <p class="text-sm text-gray-500 mb-6 font-medium">a.n. Fajar</p>
-                    <button onclick="copyToClipboard('1234567890', 'Bank BCA')" class="px-6 py-2.5 rounded-full bg-white border border-gray-300 text-gray-700 text-xs tracking-wide font-semibold hover:bg-gray-50 transition shadow-sm active:scale-95">
+                    <h3 class="font-bold text-xl text-charcoal mb-1">Bank BCA</h3>
+                    <p class="font-mono text-2xl font-bold text-charcoal my-2 tracking-wider" id="accBca">1234 5678 90</p>
+                    <p class="text-sm text-gray-muted mb-6 font-medium">a.n. Fajar</p>
+                    <button onclick="copyToClipboard('1234567890', 'Bank BCA')" class="px-6 py-2.5 rounded-full bg-white border border-silver-base text-charcoal text-xs tracking-wide font-semibold hover:bg-gray-50 transition shadow-sm active:scale-95">
                         <i class="far fa-copy mr-2"></i> Salin Rekening
                     </button>
                 </div>
 
                 <div class="glass-card p-8 rounded-3xl text-center relative overflow-hidden reveal-up delay-400">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-5 text-gray-700 font-bold border border-gray-200 shadow-sm">
-                        <i class="fas fa-wallet text-2xl text-gray-500"></i>
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-5 text-charcoal font-bold border-2 border-silver-base shadow-sm">
+                        <i class="fas fa-wallet text-2xl text-silver-dark"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">DANA</h3>
-                    <p class="font-mono text-2xl font-bold text-gray-700 my-2 tracking-wider drop-shadow-sm" id="accDana">0812 3456 7890</p>
-                    <p class="text-sm text-gray-500 mb-6 font-medium">a.n. Lusy</p>
-                    <button onclick="copyToClipboard('081234567890', 'DANA')" class="px-6 py-2.5 rounded-full bg-white border border-gray-300 text-gray-700 text-xs tracking-wide font-semibold hover:bg-gray-50 transition shadow-sm active:scale-95">
+                    <h3 class="font-bold text-xl text-charcoal mb-1">DANA</h3>
+                    <p class="font-mono text-2xl font-bold text-charcoal my-2 tracking-wider" id="accDana">0812 3456 7890</p>
+                    <p class="text-sm text-gray-muted mb-6 font-medium">a.n. Lusy</p>
+                    <button onclick="copyToClipboard('081234567890', 'DANA')" class="px-6 py-2.5 rounded-full bg-white border border-silver-base text-charcoal text-xs tracking-wide font-semibold hover:bg-gray-50 transition shadow-sm active:scale-95">
                         <i class="far fa-copy mr-2"></i> Salin Nomor DANA
                     </button>
                 </div>
@@ -386,59 +388,60 @@
  
         <div class="max-w-3xl mx-auto relative z-10">
             <div class="text-center mb-12">
-                <h2 class="font-cursive text-5xl md:text-6xl text-gray-dark mb-2 reveal-up delay-100">RSVP & Ucapan</h2>
-                <p class="text-gray-text font-medium text-sm mt-4 reveal-up delay-200">Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+                <h2 class="font-cursive text-5xl md:text-6xl text-charcoal mb-2 reveal-up delay-100">RSVP & Ucapan</h2>
+                <p class="text-gray-muted font-medium text-sm mt-4 reveal-up delay-200">Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
             </div>
 
-            <div class="glass-card p-6 md:p-10 rounded-3xl shadow-xl border border-white reveal-up delay-300">
+            <div class="glass-card p-6 md:p-10 rounded-3xl shadow-[0_20px_40px_rgba(55,65,81,0.1)] border border-white/60 reveal-up delay-300">
                 <form id="rsvpForm" class="space-y-6"> 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-bold text-gray-600 mb-2">Nama Lengkap</label>
-                            <input type="text" id="nameInput" class="w-full px-4 py-3 border border-gray-200 bg-white/80 text-gray-800 placeholder-gray-400 rounded-xl focus:ring-2 focus:ring-gray-300 focus:bg-white outline-none transition shadow-inner" placeholder="Nama Anda" required>
+                            <label class="block text-sm font-bold text-gray-muted mb-2">Nama Lengkap</label>
+                            <input type="text" id="nameInput" class="w-full px-4 py-3 border border-silver-base bg-white/70 text-charcoal placeholder-silver-dark rounded-xl focus:ring-2 focus:ring-silver-dark focus:bg-white outline-none transition shadow-inner backdrop-blur-sm" placeholder="Nama Anda" required>
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-gray-600 mb-2">Konfirmasi Kehadiran</label>
-                            <select id="attendanceInput" class="w-full px-4 py-3 border border-gray-200 bg-white/80 text-gray-800 rounded-xl focus:ring-2 focus:ring-gray-300 focus:bg-white outline-none transition shadow-inner appearance-none" required>
-                                <option value="" disabled selected class="text-gray-400">Pilih kehadiran</option>
+                            <label class="block text-sm font-bold text-gray-muted mb-2">Konfirmasi Kehadiran</label>
+                            <select id="attendanceInput" class="w-full px-4 py-3 border border-silver-base bg-white/70 text-charcoal rounded-xl focus:ring-2 focus:ring-silver-dark focus:bg-white outline-none transition shadow-inner backdrop-blur-sm appearance-none" required>
+                                <option value="" disabled selected class="text-silver-dark">Pilih kehadiran</option>
                                 <option value="hadir">Hadir</option>
                                 <option value="tidak">Tidak Hadir</option>
                             </select>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-gray-600 mb-2">Ucapan & Doa</label>
-                        <textarea id="messageInput" rows="4" class="w-full px-4 py-3 border border-gray-200 bg-white/80 text-gray-800 placeholder-gray-400 rounded-xl focus:ring-2 focus:ring-gray-300 focus:bg-white outline-none transition shadow-inner custom-scrollbar" placeholder="Tuliskan doa untuk mempelai..." required></textarea>
+                        <label class="block text-sm font-bold text-gray-muted mb-2">Ucapan & Doa</label>
+                        <textarea id="messageInput" rows="4" class="w-full px-4 py-3 border border-silver-base bg-white/70 text-charcoal placeholder-silver-dark rounded-xl focus:ring-2 focus:ring-silver-dark focus:bg-white outline-none transition shadow-inner backdrop-blur-sm custom-scrollbar" placeholder="Tuliskan doa untuk mempelai..." required></textarea>
                     </div>
-                    <button type="submit" class="w-full py-3.5 bg-gray-800 text-white rounded-xl font-bold text-lg hover:bg-gray-700 transition shadow-md active:scale-95">
+                    <!-- Tombol disesuaikan Charcoal gelap untuk penekanan -->
+                    <button type="submit" class="w-full py-3.5 bg-charcoal text-white rounded-xl font-bold text-lg hover:bg-gray-800 transition shadow-md active:scale-95">
                         Kirim Ucapan
                     </button>
                 </form>
 
-                <div class="mt-12 border-t border-gray-200 pt-8">
-                    <h4 class="font-serif font-bold text-2xl text-gray-800 mb-6 text-center">Kumpulan Doa & Ucapan</h4>
+                <div class="mt-12 border-t border-silver-base pt-8">
+                    <h4 class="font-serif font-bold text-2xl text-charcoal mb-6 text-center">Kumpulan Doa & Ucapan</h4>
                     <div id="messageList" class="space-y-4 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
                         
-                        <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-silver-light backdrop-blur-sm">
                             <div class="flex items-center gap-3 mb-2">
-                                <div class="w-9 h-9 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center font-bold text-sm border border-gray-300">A</div>
+                                <div class="w-9 h-9 rounded-full bg-silver-light text-charcoal flex items-center justify-center font-bold text-sm border border-silver-base">A</div>
                                 <div>
-                                    <h5 class="font-bold text-sm text-gray-800">Andi & Keluarga</h5>
+                                    <h5 class="font-bold text-sm text-charcoal">Andi & Keluarga</h5>
                                     <p class="text-[11px] text-emerald-600 font-semibold tracking-wide"><i class="fas fa-check-circle mr-1"></i>Hadir</p>
                                 </div>
                             </div>
-                            <p class="text-sm text-gray-600 font-medium leading-relaxed">Selamat menempuh hidup baru Fajar dan Lusy. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
+                            <p class="text-sm text-gray-muted font-medium leading-relaxed">Selamat menempuh hidup baru Fajar dan Lusy. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
                         </div>
 
-                        <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-silver-light backdrop-blur-sm">
                             <div class="flex items-center gap-3 mb-2">
-                                <div class="w-9 h-9 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold text-sm border border-gray-300">S</div>
+                                <div class="w-9 h-9 rounded-full bg-silver-base text-charcoal flex items-center justify-center font-bold text-sm border border-silver-dark/40">S</div>
                                 <div>
-                                    <h5 class="font-bold text-sm text-gray-800">Siti Rahma</h5>
+                                    <h5 class="font-bold text-sm text-charcoal">Siti Rahma</h5>
                                     <p class="text-[11px] text-rose-500 font-semibold tracking-wide"><i class="fas fa-times-circle mr-1"></i>Tidak Hadir</p>
                                 </div>
                             </div>
-                            <p class="text-sm text-gray-600 font-medium leading-relaxed">Mohon maaf belum bisa hadir. Doa terbaik untuk kalian berdua. Bahagia selalu!</p>
+                            <p class="text-sm text-gray-muted font-medium leading-relaxed">Mohon maaf belum bisa hadir. Doa terbaik untuk kalian berdua. Bahagia selalu!</p>
                         </div>
 
                     </div>
@@ -447,26 +450,27 @@
         </div>
     </section>
 
-    <footer class="bg-gray-200 text-gray-800 py-14 text-center relative overflow-hidden border-t border-white mt-10">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-40 rounded-full transform translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-gray-300 opacity-40 rounded-full transform -translate-x-1/2 translate-y-1/2 blur-3xl pointer-events-none"></div>
+    <!-- Footer Charcoal/Dark Grey untuk menutup dengan tegas dan rapi -->
+    <footer class="bg-[#1f242e] text-silver-light py-14 text-center relative overflow-hidden border-t border-silver-dark/20 mt-10">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-silver-dark opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-silver-base opacity-5 rounded-full transform -translate-x-1/2 translate-y-1/2 blur-3xl pointer-events-none"></div>
         
         <div class="relative z-10 px-4 reveal-up">
-            <h2 class="font-cursive text-5xl mb-3 text-gray-800">Fajar & Lusy</h2>
-            <p class="text-gray-500 text-xs tracking-widest uppercase font-semibold mb-6">18 September 2026</p>
+            <h2 class="font-cursive text-5xl mb-3 text-white">Fajar & Lusy</h2>
+            <p class="text-silver-dark text-xs tracking-widest uppercase font-semibold mb-6">18 September 2026</p>
 
-            <div class="h-px w-20 bg-gray-300 mx-auto mb-8"></div>
+            <div class="h-px w-20 bg-silver-dark/40 mx-auto mb-8"></div>
             
             <div class="flex flex-col items-center gap-3">
-                <p class="text-xs text-gray-500 font-medium tracking-wide">
-                    Digital Invitation by <span class="font-bold text-gray-800 tracking-wider">Fazescript</span> 
+                <p class="text-xs text-silver-dark font-medium tracking-wide">
+                    Digital Invitation by <span class="font-bold text-silver-light tracking-wider">Fazescript</span> 
                 </p>
 
                 <div class="flex items-center justify-center gap-4 mt-2">
-                    <a href="https://www.instagram.com/fazescript/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center text-gray-600 hover:text-gray-900 text-lg transition duration-300 border border-gray-300 shadow-sm hover:scale-110">
+                    <a href="https://www.instagram.com/fazescript/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-silver-light hover:text-white text-lg transition duration-300 border border-silver-dark/30 shadow-md hover:scale-110 backdrop-blur-sm">
                         <i class="fab fa-instagram"></i> 
                     </a>
-                    <a href="https://wa.me/6283830405954?text=Halo%20kak%2C%20saya%20mau%20pesan%20undangan%20digital%2C%20bagaimana%20caranya%3F" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center text-gray-600 hover:text-gray-900 text-lg transition duration-300 border border-gray-300 shadow-sm hover:scale-110">
+                    <a href="https://wa.me/6283830405954?text=Halo%20kak%2C%20saya%20mau%20pesan%20undangan%20digital%2C%20bagaimana%20caranya%3F" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-silver-light hover:text-white text-lg transition duration-300 border border-silver-dark/30 shadow-md hover:scale-110 backdrop-blur-sm">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -474,7 +478,8 @@
         </div>
     </footer>
 
-    <button id="musicToggle" class="fixed bottom-6 right-6 w-14 h-14 bg-white/90 backdrop-blur-md rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.1)] flex items-center justify-center text-gray-800 z-50 border border-gray-200 hover:scale-110 transition-transform cursor-pointer">
+    <!-- Tombol musik silver/putih elegan -->
+    <button id="musicToggle" class="fixed bottom-6 right-6 w-14 h-14 bg-white/90 backdrop-blur-md rounded-full shadow-[0_10px_25px_rgba(55,65,81,0.2)] flex items-center justify-center text-charcoal z-50 border border-silver-base hover:scale-110 transition-transform cursor-pointer">
         <i class="fas fa-volume-mute text-xl"></i>
     </button>
 
@@ -616,19 +621,21 @@
                 const statusIcon = isAttending 
                     ? '<i class="fas fa-check-circle mr-1"></i>Hadir' 
                     : '<i class="fas fa-times-circle mr-1"></i>Tidak Hadir';
+                // Warna disesuaikan untuk background terang
                 const statusColor = isAttending ? 'text-emerald-600' : 'text-rose-500';
-                const avatarColor = isAttending ? 'bg-gray-200 text-gray-700' : 'bg-gray-300 text-gray-800';
+                const avatarColor = isAttending ? 'bg-silver-light' : 'bg-silver-base';
+                const avatarBorder = isAttending ? 'border-silver-base' : 'border-silver-dark/40';
 
                 const newMessageHTML = `
-                    <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-gray-100 reveal-up active" style="animation: slideDown 0.5s ease-out;">
+                    <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-silver-light backdrop-blur-sm reveal-up active" style="animation: slideDown 0.5s ease-out;">
                         <div class="flex items-center gap-3 mb-2">
-                            <div class="w-9 h-9 rounded-full ${avatarColor} flex items-center justify-center font-bold text-sm border border-gray-300">${initial}</div>
+                            <div class="w-9 h-9 rounded-full ${avatarColor} text-charcoal flex items-center justify-center font-bold text-sm border ${avatarBorder}">${initial}</div>
                             <div>
-                                <h5 class="font-bold text-sm text-gray-800">${name}</h5>
+                                <h5 class="font-bold text-sm text-charcoal">${name}</h5>
                                 <p class="text-[11px] ${statusColor} font-semibold tracking-wide">${statusIcon}</p>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-600 font-medium leading-relaxed">${message}</p>
+                        <p class="text-sm text-gray-muted font-medium leading-relaxed">${message}</p>
                     </div>
                 `;
 
@@ -638,7 +645,6 @@
             });
         });
 
-        // Copy Clipboard & Toast
         function copyToClipboard(text, providerName) {
             const tempInput = document.createElement("input");
             tempInput.value = text;
@@ -656,9 +662,9 @@
 
             const toast = document.createElement('div');
             toast.id = 'customToast';
-            // Styling toast diubah agar cocok dengan mode terang
-            toast.className = 'fixed top-10 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-md text-gray-800 border border-gray-200 px-6 py-3 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.1)] z-[100] flex items-center gap-3 transition-all duration-500 opacity-0 translate-y-[-20px] font-sans text-sm font-semibold max-w-xs md:max-w-md text-center';
-            toast.innerHTML = `<i class="fas fa-check-circle text-gray-400 text-lg flex-shrink-0"></i> <span>${msg}</span>`;
+            // Toast disesuaikan warna charcoal agar elegan
+            toast.className = 'fixed top-10 left-1/2 transform -translate-x-1/2 bg-[#2d3748]/95 backdrop-blur-md text-white border border-silver-dark/30 px-6 py-3 rounded-full shadow-[0_15px_30px_rgba(55,65,81,0.3)] z-[100] flex items-center gap-3 transition-all duration-500 opacity-0 translate-y-[-20px] font-sans text-sm font-semibold max-w-xs md:max-w-md text-center';
+            toast.innerHTML = `<i class="fas fa-check-circle text-silver-base text-lg flex-shrink-0"></i> <span>${msg}</span>`;
             
             document.body.appendChild(toast);
 
@@ -666,7 +672,7 @@
                 toast.classList.remove('opacity-0', 'translate-y-[-20px]');
                 toast.classList.add('opacity-100', 'translate-y-0');
             }, 100);
- 
+
             setTimeout(() => {
                 toast.classList.remove('opacity-100', 'translate-y-0');
                 toast.classList.add('opacity-0', 'translate-y-[-20px]');
